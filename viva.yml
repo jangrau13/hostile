@@ -1,0 +1,21 @@
+version: 1
+assignment: hostile
+
+goals:
+  - id: forgetting
+    level: analyse
+    goal: >
+      Trace which probe results your checker consults when it answers, and
+      work out when an old failure stops counting against a replica.
+
+  - id: cold-start
+    level: evaluate
+    goal: >
+      Judge what your checker should say about a replica it has only probed
+      once, and defend it against a deploy that restarts every replica at once.
+
+  - id: unbounded
+    level: analyse
+    goal: >
+      Work out what your checker holds in memory after a month of probing once
+      a second, and what decides that number.
