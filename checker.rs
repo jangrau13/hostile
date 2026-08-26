@@ -15,6 +15,9 @@ impl Checker {
     }
 
     pub fn healthy(&self) -> bool {
-        unimplemented!()
+        let start = self.results.len().saturating_sub(self.window);
+        let recent = &self.results[start..];
+        let failures = recent.iter().filter(|ok| !**ok).count();
+        failures <= self.failures_allowed
     }
 }
